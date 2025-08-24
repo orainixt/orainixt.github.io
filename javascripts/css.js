@@ -1,4 +1,4 @@
-import {fetchHeader} from "./initPage.js";  
+import {fetchHeader} from "./utils.js";  
 
 // this function's bad cause it can't handle spaces
 const initRotateText = (selector) => {
@@ -50,8 +50,8 @@ const initRotateText = (selector) => {
 }
 
 
-const setup = () => {
-    fetchHeader();
+const setup =  async () => {
+    await fetchHeader();
     initRotateText(".word"); 
 }
 

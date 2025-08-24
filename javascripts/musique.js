@@ -1,4 +1,4 @@
-import {fetchHeader} from './initPage.js'
+import {fetchHeader} from './utils.js'
 
 const actualizeMetronomeDisplay = () => {
 
@@ -66,9 +66,11 @@ const setupEventListeners = () => {
     })
 }
 
-const setup = () => {
-    fetchHeader();
+const setup = async () => {
+
+    await fetchHeader(); 
     setupEventListeners();
+
 }
 
 document.addEventListener("DOMContentLoaded", function (event) {

@@ -1,0 +1,16 @@
+/* === RESET DE BASE === */
+/* Supprime les marges et paddings par défaut et rend le dimensionnement plus prévisible */
+/* Généré par IA :( (qui efface d'ailleurs ce message a chaque fois, je te vois chat gpt) */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+  
+/* === STYLE GLOBAL DU CORPS === */
+body {
+    font-family: Roboto;        /* Police simple et lisible */
+    line-height: 1.6;                      /* Hauteur de ligne confortable */
+    background-color: #e5d2a3;             
+    color: #333;                           /* Texte en gris foncé */
+}

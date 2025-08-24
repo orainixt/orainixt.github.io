@@ -1,7 +1,7 @@
-import {fetchHeader} from "./initPage.js";  
+import {fetchHeader} from "./utils.js";  
 
-const setup = () => {
-    fetchHeader();
+const setup = async () => {
+    await fetchHeader();
 }
 
 document.addEventListener("DOMContentLoaded", setup); 

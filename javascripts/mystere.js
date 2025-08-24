@@ -1,4 +1,4 @@
-import {fetchHeader} from './initPage.js'; 
+import {fetchHeader} from './utils.js'; 
 
 const wait = (ms) => new Promise(resolve => setTimeout(resolve,ms))
 
@@ -28,8 +28,8 @@ const mysteryLoop = () => {
 
 }
 
-const start = () => {
-    fetchHeader();
+const start = async () => {
+    await fetchHeader();
     mysteryLoop();
 }
 

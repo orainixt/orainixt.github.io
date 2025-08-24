@@ -1,5 +1,5 @@
-import {fetchHeader} from "./initPage.js";  
-import { parseJson } from "./utils.js";
+
+import { parseJson,fetchHeader } from "./utils.js";
 
 const bookDataPath = "../data/books.json";
 
@@ -151,7 +151,7 @@ const prefillEditForm = (bookData) => {
 
 const setup = 
     async () => {
-        fetchHeader();
+        await fetchHeader();
         await createHtmlTableBook(); 
 }
 
