@@ -1,5 +1,3 @@
-import '../css/index.css';
-
 import {fetchHeader} from "./initPage.js";  
  
 
