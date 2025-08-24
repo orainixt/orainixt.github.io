@@ -1,23 +1,17 @@
 import {fetchHeader} from "./initPage.js";  
+import { parseJson } from "./utils.js";
 
-const fetchList = 
-    async () => {
-            try {
+const bookDataPath = "../data/books.json";
 
-                const response = await fetch('/api/books/'); 
 
-                if(!response.ok) {
-                    console.error(`response not ok\nresponse received : ${await response.text()}`)
-                } 
-                const bookData = await response.json(); 
-                return bookData;
+const createHtmlTableBook = async () => {
 
-            } catch (error) {
-                console.error(`fetchList error : ${error}`);
-            }
-}
+    const bookData = await parseJson(bookDataPath);
 
-const createHtmlTableBook = (bookData) => {
+    if (!bookData || bookData.length === 0) {
+        bookTab.innerHTML = "<p>Aucun livre renseigné</p>";
+        return; 
+    }
 
     const bookTab = document.getElementById("book-tab");
     bookTab.innerHTML = ""; 
