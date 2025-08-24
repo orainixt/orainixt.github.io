@@ -128,7 +128,7 @@ const sendForm = async (event, form) => {
         const data = await response.json(); 
         console.log("book added"); 
 
-        createHtmlTableBook(await fetchList());
+        await createHtmlTableBook();
 
     } catch (error) {
         console.error(`error while sending form for new book : ${error}`); 
@@ -137,48 +137,7 @@ const sendForm = async (event, form) => {
 
 }
 
-const deleteBook = async (id) => {
-    try {
-        const response = await fetch(`/api/books/${id}`, {method:"DELETE"}); 
-        if (!response.ok) {
-            const text = await response.text(); 
-            console.error(`error while deleting book with id ${id}\nresponse received : ${text}`); 
-            return; 
-        } 
-        const data = await response.json(); 
-        console.log(`book with id ${id} deleted`); 
 
-        createHtmlTableBook(await fetchList()); 
-
-    } catch (error) {
-        console.error(`fatal error while deleting book with id ${id}\nerror received : ${error}`); 
-    }
-}
-
-const editBook = async (id, updatedBook) => {
-
-    document.getElementById("add-book").hidden = true; 
-    document.getElementById("edit-book").hidden = false; 
-
-    prefillEditForm(updatedBook);
-
-    try {
-        const response = await fetch(`/api/books/${id}`, {
-            method: "PATH", 
-            headers: {"Content-Type": "application/json"}, 
-            body: JSON.stringify(updatedBook)
-        }); 
-        if (!response.ok){
-            const text = await response.text(); 
-            console.error(`error while editing book with id ${id}\nresponse received : ${text}`); 
-            return; 
-        }
-        const data = await response.json(); 
-        createHtmlTableBook(await fetchList()); 
-    } catch (error){
-        console.error(`fatal error while editing book with id ${id}\nerror received : ${error}`); 
-    }
-}
 
 const prefillEditForm = (bookData) => {
     document.getElementById("edit-title").value = bookData.title; 
@@ -193,7 +152,7 @@ const prefillEditForm = (bookData) => {
 const setup = 
     async () => {
         fetchHeader();
-        createHtmlTableBook(await fetchList()); 
+        await createHtmlTableBook(); 
 }
 
 document.addEventListener("DOMContentLoaded", async (event) => {
