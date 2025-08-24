@@ -7,7 +7,7 @@ const parseJson = async (path) => {
         return data; 
     } catch (error) {
         console.error(`error while parsing : ${error}`); 
-        return null; //maybe return [] is better 
+        return []; 
     }
 }
 
