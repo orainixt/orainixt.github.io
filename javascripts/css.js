@@ -1,5 +1,4 @@
-import '../css/css.css'
-
+import {fetchIndexHeader} from "./initPage.js";  
 
 // this function's bad cause it can't handle spaces
 const initRotateText = (selector) => {
@@ -52,6 +51,7 @@ const initRotateText = (selector) => {
 
 
 const setup = () => {
+    fetchIndexHeader();
     initRotateText(".word"); 
 }
 

@@ -1,4 +1,4 @@
-import '../css/mystere.css';
+import {fetchHeader} from './initPage.js'; 
 
 const wait = (ms) => new Promise(resolve => setTimeout(resolve,ms))
 
@@ -29,6 +29,7 @@ const mysteryLoop = () => {
 }
 
 const start = () => {
+    fetchHeader();
     mysteryLoop();
 }
 

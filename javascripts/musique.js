@@ -1,4 +1,4 @@
-import '../css/musique.css';
+import {fetchHeader} from './initPage.js'
 
 const actualizeMetronomeDisplay = () => {
 
@@ -67,6 +67,7 @@ const setupEventListeners = () => {
 }
 
 const setup = () => {
+    fetchHeader();
     setupEventListeners();
 }
 

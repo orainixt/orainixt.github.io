@@ -1,4 +1,4 @@
-import '../css/livres.css';
+import {fetchHeader} from "./initPage.js";  
 
 const fetchList = 
     async () => {
@@ -198,6 +198,7 @@ const prefillEditForm = (bookData) => {
 
 const setup = 
     async () => {
+        fetchHeader();
         createHtmlTableBook(await fetchList()); 
 }
 

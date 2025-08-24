@@ -1,8 +1,8 @@
-import {fetchHeader} from "./initPage.js";  
+import {fetchIndexHeader} from "./initPage.js";  
  
 
 const setup = () => {
-    fetchHeader();
+    fetchIndexHeader();
 }
 
 document.addEventListener("DOMContentLoaded", setup); 
