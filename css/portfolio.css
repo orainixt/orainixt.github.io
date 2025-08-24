@@ -1,37 +1,76 @@
+/* THANKS TO https://codepen.io/jh3y/pen/raadLbQ*/ 
+
 /* === IMPORT POLICE ET NORMALIZE === */
 @import url('https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100..900&display=swap');
 @import url('https://unpkg.com/normalize.css') layer(normalize);
 
+
+
 /* === COUNTERS (adaptés) === */
 @layer counter {
-  main section {
-    counter-increment: section var(--section-increment, 1);
+/* Reset global */
+#project-list-section {
+    counter-reset: section; 
   }
-  main,
-  main section > div:first-of-type {
-    counter-reset: section var(--section-start, 0);
+  
+  /* Niveau 1 : sections principales */
+  #project-list-section > section {
+    counter-increment: section;
+    counter-reset: subsection; /* reset du niveau 2 à chaque nouvelle section principale */
   }
-  main section span::before {
-    content: counters(section, '.', pad) var(--text, ' ');
+  
+  /* Niveau 2 : projets directs */
+  #project-list-section > section > div > section {
+    counter-increment: subsection;
+    counter-reset: subsubsection; /* reset du niveau 3 pour nested */
   }
-  main h2 {
-    --text: '. ';
-    font-weight: bold;
+  
+  /* Niveau 3 : projets dans #nested */
+  #project-list-section > section > div > section #nested section {
+    counter-increment: subsubsection;
   }
+  
+  /* Affichage du numéro */
+  
+  /* Niveau 1 */
+  #project-list-section > section h2 span::before {
+    content: counters(section, '.', pad) '. ';
+  }
+  
+  /* Niveau 2 */
+  #project-list-section > section > div > section span::before {
+    content: counters(section, '.', pad) '.' counters(subsection, '.', pad) '. ';
+  }
+  
+  /* Niveau 3 */
+  #project-list-section > section > div > section #nested section span::before {
+    content: counters(section, '.', pad) '.' counters(subsection, '.', pad) '.' counters(subsubsection, '.', pad) '. ';
+  }
+  
+  /* Style pad */
   @counter-style pad {
     system: extends decimal;
     pad: 2 '0';
   }
-}
+
 
 /* === DEMO / STYLING ADAPTÉ AU THEME === */
 @layer demo {
+    #project-list-section {
+        background-color: rgba(35, 55, 78, 0.1);
+        border-radius: 15px;  /* coins arrondis */
+        padding: 20px 30px; /* espace intérieur */
+        max-width: 1400px;
+        margin: 30px auto;
+    }
+
   main {
     --accent: hsl(10 80% 50% / 1);
     font-family: 'Geist Mono', monospace;
     text-transform: uppercase;
+    text-align: justify;
   }
-
+ 
   main h1 {
     margin: 0;
     position: fixed;
@@ -55,6 +94,9 @@
   main .content {
     display: flex;
     gap: 4rem;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
   }
 
   main pre,
@@ -78,9 +120,9 @@
     opacity: 0.5;
   }
 
-  main:where(:not(:has([draggable='true']))) section span:hover {
+  .project span:hover {
     color: var(--accent);
-  }
+    }
 
   main div {
     display: flex;
@@ -92,4 +134,14 @@
   main div div {
     padding-block: 1rem;
   }
+}
+
+/* Réduire un peu la taille des nested sections */
+#nested {
+    font-size: 0.9em; /* réduit la taille à 90% de la taille normale */
+    padding-left: 1rem; /* optionnel, pour indenter un peu */
+}
+
+#nested section span {
+    font-size: 0.9em; /* pour être sûr que le texte est réduit */
 }
