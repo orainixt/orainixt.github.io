@@ -1,7 +1,28 @@
+
+/* === CONTENEUR PRINCIPAL TABLEAU + FORMULAIRE === */
+#book-section {
+    display: flex;
+    gap: 30px;               /* espace entre tableau et formulaire */
+    justify-content: center; /* centre les deux horizontalement */
+    flex-wrap: wrap;         /* passe en colonne si écran trop petit */
+    margin: 40px auto;
+    width: 95%;
+}
+
+/* Ajuste le tableau et le formulaire pour qu’ils prennent chacun la moitié */
+#book-tab-container {
+    flex: 1 1 45%;  /* grandit, rétrécit, largeur 45% max */
+    min-width: 300px;
+}
+
+#book-form-container {
+    flex: 1 1 45%;
+    min-width: 300px;
+}
 /* === SECTION TABLEAU === */
 #book-tab {
-    margin: 40px auto;
-    width: 90%;
+    margin: 0;
+    width: 100%;
     overflow-x: auto;
 }
 
@@ -41,8 +62,8 @@
 #edit-book {
     background-color: #fff7e6;
     padding: 30px;
-    margin: 40px auto;
-    width: 90%;
+    margin: 0;
+    width: 100%;
     max-width: 600px;
     border-radius: 15px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
@@ -103,6 +124,17 @@
     #menu {
         position: static;
         transform: none;
+    }
+    #book-section {
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+    }
+
+    #book-tab-container,
+    #book-form-container {
+        flex: 1 1 100%;
+        min-width: auto;
     }
 
     #book-tab table,
