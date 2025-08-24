@@ -20,4 +20,4 @@ const fetchHeader = async () => {
     }
 }
 
-export {fetchIndexHeader}; 
+export {fetchIndexHeader, fetchHeader}; 
