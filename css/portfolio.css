@@ -61,7 +61,7 @@
         border-radius: 15px;  /* coins arrondis */
         padding: 20px 30px; /* espace intérieur */
         max-width: 1400px;
-        margin: 30px auto;
+        margin-top: 60px;
     }
 
   main {
@@ -91,7 +91,7 @@
     color: #0000;
   }
 
-  main .content {
+  main #content {
     display: flex;
     gap: 4rem;
     justify-content: center;

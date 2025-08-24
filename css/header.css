@@ -8,6 +8,7 @@ header {
     background-color: #23374e;
     color: white;
     flex-wrap: wrap;
+    margin-bottom: 40px;
 }
 
 /* Logo à gauche */
