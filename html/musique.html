@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Musique</title>
+</head>
+<body>
+    <header>
+
+        <div id="logo">
+            <img src="../images/logo.jpg"/>
+        </div>
+
+        <div id="menu">
+            <h1>Bienvenue dans ma tête</h1>
+            <nav>
+                <ul>
+                    <li><a href="../index.html">Accueil</a></li>
+                    <li><a href="./musique.html">Musique</a></li>
+                    <li><a href="./apropos.html">A propos</a></li>
+                </ul>
+            </nav>
+        </div>
+
+
+
+
+    </header> 
+    
+    <h1>Musique !</h1>
+    <!-- <div id="create">
+        <p>Outil de création de morceaux</p>
+        <form id="create-form">
+            <label for="artist">Artiste: </label>
+            <input type="text" id="artist-text" required><br>
+            <label for="name">Nom de la musique: </label><br>
+            <input type="text" id="name-text" required><br> 
+        </form>
+    </div> -->
+
+    <div id="metronome">
+
+        <label>Choisir la pulsation</label>
+        <input id="metronome-slider" type="range" min="0" max="208" value="120">
+        <p id="metronome-number-display">120</p>
+
+        <div class="compteur">
+            <div class="cadran"> 
+                <div class="needle">
+
+                </div>
+            </div>
+        </div>
+
+        <button id="start-metronome">Démarrer le métronome</button>
+        <button id="stop-metronome">Arrêter le métronome</button>
+    </div>
+
+    <br><br>
+    <a href="../index.html">Retourner à l'accueil</a>
+</body>
+</html>

@@ -1,0 +1,166 @@
+/* === RESET DE BASE === */
+/* Supprime les marges et paddings par défaut et rend le dimensionnement plus prévisible */
+/* Généré par IA :( (qui efface d'ailleurs ce message a chaque fois, je te vois chat gpt) */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+  
+/* === STYLE GLOBAL DU CORPS === */
+body {
+    font-family: Arial, sans-serif;        /* Police simple et lisible */
+    line-height: 1.6;                      /* Hauteur de ligne confortable */
+    background-color: #e5d2a3;             
+    color: #333;                           /* Texte en gris foncé */
+}
+
+/* === EN-TÊTE === */
+header {
+    display: flex;
+    flex-direction: row;          /* Affiche logo et menu côte à côte */
+    align-items: center;          /* Aligner verticalement */
+    justify-content: space-between;  /* Commencer à gauche */
+    padding: 20px;
+    background-color: #23374e;
+    color: white;
+    flex-wrap: wrap;
+}
+
+/* Logo à gauche */
+#logo {
+    flex: 0 0 auto;
+}
+
+#logo img {
+    width: 100px;
+    height: auto;
+    border-radius: 20px;
+}
+
+/* Menu au centre et en colonne */
+#menu {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+/* Titre */
+#menu h1 {
+    margin-bottom: 10px;
+}
+
+/* Menu de navigation */
+#menu nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    padding: 0;
+    margin: 0;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 5px 10px;
+    transition: background 0.3s;
+    border-radius: 5px;
+    display: block;
+}
+
+nav a:hover {
+    background-color: #444;
+}
+
+
+#home-text {
+  color: #23374e;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+  max-width: 800px;
+  margin: 30px auto;
+  line-height: 1.7;
+  font-size: 18px;
+  padding: 0;
+  background: none;
+}
+
+
+
+/* rotative text      (quasi sans IA cette fois) */   
+#rotating-text-section {
+  background-color: rgba(35, 55, 78, 0.1);
+  border-radius: 15px;  /* coins arrondis */
+  padding: 20px 30px; /* espace intérieur */
+  max-width: 800px;
+  display: flex; 
+  justify-content: flex-start; 
+  margin: 30px auto;
+}
+
+#rotating-text-number p {
+  font-size:  22px;
+  font-weight: bold;
+  color: #23374e;
+}
+
+#rotating-text {
+  font-family: Arial, sans-serif;
+  font-weight: 600;
+  font-size: 20px;
+  color: #23374e;
+  position: relative;
+  text-align: left;
+}
+
+/* p à l’intérieur */
+#rotating-text p {
+  display: inline-flex;
+  margin: 0;
+  vertical-align: top;
+}
+
+/* .word à l’intérieur */
+#rotating-text p .word {
+  position: absolute; 
+  display: flex;
+  opacity: 0;
+  margin-left: 7px;
+}
+
+/* .letter à l’intérieur */
+#rotating-text p .word .letter {
+  display: inline-block;
+  transform-origin: center center 25px;
+}
+
+
+#rotating-text p .word .letter-out {
+  transform: rotateX(90deg);
+  transition: 0.32s cubic-bezier(0.6, 0, 0.7, 0.2);
+}
+
+#rotating-text p .word .letter-in {
+  transition: 0.38s ease;
+}
+
+#rotating-text p .word .letter-behind {
+  transform: rotateX(-90deg);
+}
+
+
+/* Couleurs */
+.first    { color: #b04e3a; }  
+.second    { color: #6b4a7a; } 
+.third  { color: #3b6b99; }  
+.fourth     { color: #4a915e; }  
+.fifth  { color: #d9a13a; } 
+
+
+#rotating-text #spacer {
+  display: relative;
+  width: 100px;
+}

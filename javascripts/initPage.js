@@ -1,0 +1,12 @@
+const fetchHeader = async () => {
+    try {
+        const response = await fetch('html/header.html'); 
+        if (!response.ok) throw new Error("can't load header"); 
+        const html = await response.text(); 
+        document.getElementById("header-placeholder"); 
+    } catch (error) {
+        console.error(`error while loading header : ${error}`); 
+    }
+}; 
+
+export {fetchHeader}; 

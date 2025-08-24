@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <title>A propos de MOI</title>
+</head>
+
+<body>
+
+    <header>
+
+        <div id="logo">
+            <img src="../images/logo.jpg"/>
+        </div>
+
+        <div id="menu">
+            <h1>Bienvenue dans ma tête</h1>
+            <nav>
+                <ul>
+                    <li><a href="../index.html">Accueil</a></li>
+                    <li><a href="./musique.html">Musique</a></li>
+                    <li><a href="./apropos.html">A propos</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="presentation-text">
+            <h2> Ici se trouve ma bibliothèque de livres lus, en cours de lecture ou bien ceux qui prennent la poussière en attendant que leur couverture me plaise</h2>
+
+        </section>
+
+        <section id="tab">
+            <div id="book-tab">
+                <table>
+                    <tr>
+                        <td>Titre</td>
+                        <td>Aut.eur.rice</td>
+                        <td>Note</td>
+                        <td>Genre</td>
+                        <td>Resumé</td>
+                        <td>Année de lecture</td>
+                    </tr>
+                </table>
+            </div>
+        </section>
+
+        <section id="add">
+            <div id="add-book">
+                <form id="add-book-form">
+
+                    <label for="title">Titre : </label>
+                    <input id="title" name="title" required/>
+
+                    <label for="author">Aut.eur.rice</label> 
+                    <input id="author" name="author" required/>
+                    
+                    <label for="grade">Note :</label>
+                    <input id="grade" name="grade" type="number" min="0" max="10"/> 
+
+                    <label for="category">Genre :</label>
+                    <input id="category" name="category" required/> 
+
+                    <label for="description" >Résumé :</label>
+                    <textarea id="description" name="description"></textarea>
+
+                    <label for="reading-year">Année de lecture :</label>
+                    <input id="reading-year" name="reading-year" type="number" required/>
+                    
+                    <label for="year">Année de sortie :</label>
+                    <input id="year" name="year" type="number"/>
+
+                    <button type="submit">Ajouter le livre</button>
+                </form>
+            </div>
+        </section>
+
+        <section id="edit">
+            <div id="edit-book" hidden>
+                <form id="edit-book-form">
+                    <label for="title">Nouveau titre : </label>
+                    <input id="edit-title" name="title" required/>
+
+                    <label for="author">Nouve.au.lle aut.eur.rice</label> 
+                    <input id="edit-author" name="author" required/>
+                    
+                    <label for="grade">Nouvel note :</label>
+                    <input id="edit-grade" name="grade" type="number" min="0" max="10"/> 
+
+                    <label for="category">Nouveau genre :</label>
+                    <input id="edit-category" name="category" required/> 
+
+                    <label for="description" >Nouveau résumé :</label>
+                    <textarea id="edit-description" name="description"></textarea>
+
+                    <label for="reading-year">Nouvelle année de lecture  :</label>
+                    <input id="edit-reading-year" name="reading-year" type="number" required/>
+                    
+                    <label for="year">Nouvelle année de sortie :</label>
+                    <input id="edit-year" name="year" type="number"/>
+
+                    <button type="submit">Modifier le livre</button>
+                </form>
+            </div>
+        </section>
+
+    </main>
+
+</body>
+</html>
