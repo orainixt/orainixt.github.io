@@ -112,27 +112,7 @@ const sendForm = async (event, form) => {
         category: form.category.value
     };
 
-    try { 
-        const response = await fetch("/api/books", {
-            method:"POST", 
-            headers:{"Content-Type": "application/json"}, 
-            body:JSON.stringify(bookData)
-        }) 
 
-        if(!response.ok) {
-            const text = await response.text(); 
-            console.error(`response not ok\nresponse received : ${text}`); 
-            return; 
-        } 
-
-        const data = await response.json(); 
-        console.log("book added"); 
-
-        await createHtmlTableBook();
-
-    } catch (error) {
-        console.error(`error while sending form for new book : ${error}`); 
-    }
 
 
 }

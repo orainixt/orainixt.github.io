@@ -11,6 +11,7 @@ const parseJson = async (path) => {
     }
 }
 
+ 
 const fetchHeader = async () => {
     try {
         const response = await fetch('header.html'); 
