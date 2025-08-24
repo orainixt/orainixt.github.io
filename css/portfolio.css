@@ -8,6 +8,18 @@
 
 /* === COUNTERS (adaptés) === */
 @layer counter {
+
+.no-counter span::before {
+    content: none !important;
+}
+
+.no-counter::before{
+  content: none !important;
+}
+
+.no-counter {
+    margin-left: 4rem;
+}
 /* Reset global */
 #project-list-section {
     counter-reset: section; 
@@ -26,7 +38,7 @@
   }
   
   /* Niveau 3 : projets dans #nested */
-  #project-list-section > section > div > section #nested section {
+  #project-list-section > section > div > section .nested section {
     counter-increment: subsubsection;
   }
   
@@ -43,7 +55,7 @@
   }
   
   /* Niveau 3 */
-  #project-list-section > section > div > section #nested section span::before {
+  #project-list-section > section > div > section .nested section span::before {
     content: counters(section, '.', pad) '.' counters(subsection, '.', pad) '.' counters(subsubsection, '.', pad) '. ';
   }
   
@@ -136,12 +148,43 @@
   }
 }
 
-/* Réduire un peu la taille des nested sections */
-#nested {
-    font-size: 0.9em; /* réduit la taille à 90% de la taille normale */
-    padding-left: 1rem; /* optionnel, pour indenter un peu */
 }
 
-#nested section span {
-    font-size: 0.9em; /* pour être sûr que le texte est réduit */
+  /* Réduire un peu la taille des nested sections */
+  .nested {
+    font-size: 0.8em; /* réduit la taille à 90% de la taille normale */
+    padding-left: 2rem; /* optionnel, pour indenter un peu */
+}
+
+
+.explain {
+  position: relative;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 0.6rem;
+}
+
+.explain .tip-text {
+
+  font-size: 0.8rem;
+  visibility: hidden;
+  opacity: 0;
+  width: 220px;
+  background-color: #333;
+  color: #e5d2a3;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px;
+  position: absolute;
+  bottom: 125%;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: opacity 0.3s;
+
+  text-transform: none;
+}
+
+.explain:hover .tip-text {
+  visibility: visible;
+  opacity: 1;
 }
