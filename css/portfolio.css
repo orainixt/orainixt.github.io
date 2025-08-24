@@ -1,0 +1,95 @@
+/* === IMPORT POLICE ET NORMALIZE === */
+@import url('https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100..900&display=swap');
+@import url('https://unpkg.com/normalize.css') layer(normalize);
+
+/* === COUNTERS (adaptés) === */
+@layer counter {
+  main section {
+    counter-increment: section var(--section-increment, 1);
+  }
+  main,
+  main section > div:first-of-type {
+    counter-reset: section var(--section-start, 0);
+  }
+  main section span::before {
+    content: counters(section, '.', pad) var(--text, ' ');
+  }
+  main h2 {
+    --text: '. ';
+    font-weight: bold;
+  }
+  @counter-style pad {
+    system: extends decimal;
+    pad: 2 '0';
+  }
+}
+
+/* === DEMO / STYLING ADAPTÉ AU THEME === */
+@layer demo {
+  main {
+    --accent: hsl(10 80% 50% / 1);
+    font-family: 'Geist Mono', monospace;
+    text-transform: uppercase;
+  }
+
+  main h1 {
+    margin: 0;
+    position: fixed;
+    bottom: 1rem;
+    font-size: 1.5rem;
+    right: 1rem;
+    opacity: 0.7;
+  }
+
+  main .ghost {
+    outline: 2px dashed var(--accent);
+    outline-offset: 2px;
+    background: repeating-linear-gradient(
+      -45deg,
+      color-mix(in oklch, var(--accent), #0000 90%) 0 1px,
+      #0000 1px 10px
+    );
+    color: #0000;
+  }
+
+  main .content {
+    display: flex;
+    gap: 4rem;
+  }
+
+  main pre,
+  main code {
+    background: #0000 !important;
+  }
+
+  main section {
+    transition: opacity 0.2s;
+  }
+
+  main h2,
+  main div section {
+    cursor: grab;
+  }
+
+  main section
+    div:has(> section[draggable='true'])
+    > section:not([draggable='true']),
+  main:has(> section[draggable='true']) > section:not([draggable='true']) {
+    opacity: 0.5;
+  }
+
+  main:where(:not(:has([draggable='true']))) section span:hover {
+    color: var(--accent);
+  }
+
+  main div {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding-left: 1rem;
+  }
+
+  main div div {
+    padding-block: 1rem;
+  }
+}
