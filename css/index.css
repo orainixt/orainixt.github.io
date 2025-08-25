@@ -259,7 +259,7 @@ textarea, label {
 .site-wrapper {
   /* border-top: 4px solid #ff0037; } */
   border-top: none;
-
+}
 .page-close {
   font-size: 30px;
   position: absolute;
@@ -343,7 +343,7 @@ font-family: monospace;
   justify-content: center; /* centre horizontalement */
   align-items: center;     /* centre verticalement */
   height: 100%;
-  margin-bottom: 200px;
+  margin-bottom: 60px;
 }
 .hexagon-menu {
   max-width: 850px;
@@ -368,7 +368,7 @@ font-family: monospace;
     /* background-color: rgba(14, 17, 24, 0.97); */
     background-image:url('../images/gargantua_compressed.jpg');
     background-size: 125%;
-    background-position: center center; 
+    background-position: center 35%; 
     background-repeat: no;
 }
 
