@@ -1,0 +1,10 @@
+#class-section {
+	background-color: rgba(35, 55, 78, 0.1); 
+	border-radius: 15px;
+	padding: 20px 30px;
+	max-width: 800px;
+	display: flex; 
+	justify-content: flex-start; 
+	margin: 30px auto;
+	color: #23374e;
+  }
