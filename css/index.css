@@ -343,7 +343,7 @@ font-family: monospace;
   justify-content: center; /* centre horizontalement */
   align-items: center;     /* centre verticalement */
   height: 100%;
-  margin-bottom: 100px;
+  margin-bottom: 200px;
 }
 .hexagon-menu {
   max-width: 850px;
@@ -366,8 +366,8 @@ font-family: monospace;
   .page-home .overlay {
     height: 100%;
     /* background-color: rgba(14, 17, 24, 0.97); */
-    background-image:url('../images/gargantua-black-5200x3250-9621.jpg');
-    background-size: cover;
+    background-image:url('../images/gargantua_compressed.jpg');
+    background-size: 125%;
     background-position: center center; 
     background-repeat: no;
 }
