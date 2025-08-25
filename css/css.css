@@ -30,7 +30,6 @@
 }
 
 #rotating-text {
-  font-family: Arial, sans-serif;
   font-weight: 600;
   font-size: 20px;
   color: #23374e;
@@ -88,14 +87,15 @@
 }
 
 #loading-section {
-  background-color: rgba(35, 55, 78, 0.1);
-  border-radius: 15px;  /* coins arrondis */
-  padding: 20px 30px; /* espace intérieur */
-  max-width: 800px;
-  display: flex; 
-  justify-content: flex-start; 
-  margin: 30px auto;
-}
+	background-color: rgba(35, 55, 78, 0.1); 
+	border-radius: 15px;
+	padding: 20px 30px;
+	max-width: 800px;
+	display: flex; 
+	justify-content: flex-start; 
+	margin: 30px auto;
+	color: #23374e;
+  }
 
 .loader {
 	--color: white;
@@ -450,26 +450,33 @@
 	miscs
 **/
 
-.loading-container {
+.loading-block {
 	display: grid;
-	grid-template-columns: repeat(3, 18vmin);
-	grid-template-rows: repeat(3, 18vmin);
+	grid-template-columns: repeat(3, 10vmin); /* taille des colonnes*/
+	grid-template-rows: repeat(3, 10vmin); /* taille des lignes */
 	grid-gap: 1vmin;
 }
 
-.item	{
-	background: rgba(255, 255, 255, 0.1);
+.item {
+	background-image: linear-gradient(
+	  to right top,
+	  #051937,
+	  #004d7a,
+	  #008793,
+	  #00bf72,
+	  #a8eb12
+	);
 	display: grid;
 	place-items: center;
 	border-radius: 4px;
 	transition: opacity 0.4s ease;
-}
+  }
 
-.loading-container:hover .item {
+.loading-block:hover .item {
 	opacity: 0.3;
 }
 
-.loading-container:hover .item:hover {
+.loading-block:hover .item:hover {
 	opacity: 1;
 }
 
@@ -491,22 +498,9 @@
 	opacity: 0.6;
 }
 
-body #loading-section {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 100%;
-  font-family: 'Noto Sans', 'Roboto', sans-serif;
-  letter-spacing: 0.3px;
-  text-align: center;
-  color: white;
-  background-image: linear-gradient(
-    to right top,
-    #051937,
-    #004d7a,
-    #008793,
-    #00bf72,
-    #a8eb12
-  );
-}
+#loading-text-number p {
+	font-size:  22px;
+	font-weight: bold;
+	color: #23374e;
+	margin-right: 100px; 
+  }
