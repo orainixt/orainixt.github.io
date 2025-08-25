@@ -1,14 +1,19 @@
-
+/*
+SOURCES : 
+https://codepen.io/uiswarup/pen/dyyqaGR - Menu Hexagonal 
+*/
 body {
   font-family: "Libre Baskerville", serif;
   font-weight: 400;
   font-size: 16px;
   line-height: 30px;
   background-color: #0c0f15;
-  overflow-x:hidden;
-  color: #ababab; }
+  /* overflow-x:hidden; */
+  overflow: hidden; /*no scroll*/
+  color: #ababab; 
+}
 
-::-webkit-scrollbar {
+/* ::-webkit-scrollbar {
     width: 10px;
     background-color: #F5F5F5;
   
@@ -22,7 +27,7 @@ body {
 ::-webkit-scrollbar-track {
     -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
     background-color: #F5F5F5;
-}
+} */
 
 .heading-page
 {
@@ -133,13 +138,17 @@ textarea, label {
 .pt-table {
   display: table;
   width: 100%;
-  height: -webkit-calc(100vh - 4px);
+  /* height: -webkit-calc(100vh - 4px);
   height: -moz-calc(100vh - 4px);
-  height: calc(100vh - 4px); }
+  height: calc(100vh - 4px); } */
+  height: 100vh;
+}
 
 .pt-tablecell {
   display: table-cell;
-  vertical-align: middle; }
+  vertical-align: middle; 
+  height: 100%;
+}
 
 .overlay {
   position: absolute;
@@ -248,7 +257,8 @@ textarea, label {
 -------------------------------------------------*/
 .mt20{margin-top:20px;}
 .site-wrapper {
-  border-top: 4px solid #ff0037; }
+  /* border-top: 4px solid #ff0037; } */
+  border-top: none;
 
 .page-close {
   font-size: 30px;
@@ -345,10 +355,15 @@ font-family: monospace;
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
-  vertical-align: middle; }
+  vertical-align: middle; 
+}
   .page-home .overlay {
-    background-color: rgba(14, 17, 24, 0.97);
-    background-image:url("https://images.unsplash.com/photo-1682686581220-689c34afb6ef?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+    height: 100%;
+    /* background-color: rgba(14, 17, 24, 0.97); */
+    background-image:url('../images/gargantua-black-5200x3250-9621.jpg');
+    background-size: cover;
+    background-position: center center; 
+    background-repeat: no-repeat;
 }
 
 /* End of container */
