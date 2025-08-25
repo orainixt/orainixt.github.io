@@ -338,7 +338,13 @@ font-family: monospace;
 /*------------------------------------------------
     Home Page
 -------------------------------------------------*/
-
+.page-home .container {
+  display: flex;
+  justify-content: center; /* centre horizontalement */
+  align-items: center;     /* centre verticalement */
+  height: 100%;
+  margin-bottom: 100px;
+}
 .hexagon-menu {
   max-width: 850px;
   margin: 0 auto;
@@ -363,7 +369,7 @@ font-family: monospace;
     background-image:url('../images/gargantua-black-5200x3250-9621.jpg');
     background-size: cover;
     background-position: center center; 
-    background-repeat: no-repeat;
+    background-repeat: no;
 }
 
 /* End of container */
