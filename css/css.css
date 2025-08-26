@@ -504,3 +504,112 @@
 	color: #23374e;
 	margin-right: 100px; 
   }
+
+
+/*https://codepen.io/Gothburz/pen/YyLMVx*/
+#cv-section {
+	background-color: rgba(35, 55, 78, 0.1); 
+	border-radius: 15px;
+	padding: 20px 30px;
+	max-width: 800px;
+	display: flex; 
+	justify-content: flex-start; 
+	margin: 30px auto;
+	color: #23374e;
+  }
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;900&display=swap');
+
+#cv-section h1 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 900;
+    color: #2a4d69; /* accent bleu néon */
+    font-size: 2.5rem;
+    transition: all 0.3s ease;
+}
+
+#cv-section h1:hover {
+    color: #00d1b2;
+    transform: scale(1.05);
+}
+
+#identity-results,
+#resume,
+#loadingH1,
+#loadingMessage2,
+#message {
+    margin-top: 20px;
+    font-weight: 900;
+    font-size: 1.5rem;
+    color: #2a4d69;
+    transition: opacity 0.5s ease;
+}
+
+#cv-section i {
+    font-size: 1.5rem;
+    color: #2a4d69;
+    transition: transform 0.3s ease;
+}
+
+#cv-section i:hover {
+    transform: scale(1.2);
+}
+
+/* Bloc simple */
+.block {
+    width: 50px;
+    height: 50px;
+    background-color: #1e1e1e;
+    border-radius: 6px;
+    transition: background-color 0.3s ease;
+}
+
+.block:hover {
+    background-color: #2a4d69;
+}
+
+/* Curseur modernisé */
+.cursor:after {
+    content: "_";
+    opacity: 1;
+    animation: blink 1s step-start infinite;
+}
+
+@keyframes blink {
+    0%, 50%, 100% { opacity: 1; }
+    25%, 75% { opacity: 0; }
+}
+
+.sign:before {
+    content: "> ";
+    font-weight: 600;
+}
+
+/* Masquage simplifié */
+#loading-alpha-div,
+.img-div,
+#loadingMessage2 {
+    display: none;
+}
+
+/* Images */
+img {
+    margin: 50px 0;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+img:hover {
+    transform: scale(1.05);
+}
+
+/* Marges supplémentaires */
+.sub-item {
+    margin-top: 20px;
+    margin-left: 40px;
+}
+
+.inline {
+    display: inline;
+    margin-left: 10px;
+}
