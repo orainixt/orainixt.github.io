@@ -16,3 +16,5 @@ yarn-error.log*
 #package
 package-lock.json
 package.json
+
+Makefile
