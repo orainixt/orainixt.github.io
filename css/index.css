@@ -369,7 +369,7 @@ font-family: monospace;
     background-image:url('../images/gargantua_compressed.jpg');
     background-size: 125%;
     background-position: center 35%; 
-    background-repeat: no;
+    background-repeat: no-repeat;
 }
 
 /* End of container */
