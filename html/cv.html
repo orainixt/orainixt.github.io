@@ -7,6 +7,7 @@
     <title>A propos de MOI</title>
     <script type="module" src="../javascripts/cv.js" defer></script>
     <link rel="stylesheet" href="../css/header.css">    
+    <link rel="stylesheet" href="../css/body.css">
     <link rel="stylesheet" href="../css/cv.css">
 
 
@@ -17,19 +18,55 @@
     <div id="header-placeholder"></div>
 
     <section id="code-cv-section">
-        <h2>public class Identity {</h2>
 
-        <h2>&nbsp;&nbsp;&nbsp;&nbsp;public Identity() {</h2>
-        <h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.name = "Lucas Sauvage"</h2>
-        <h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.program = "M1 IOT & Cybersecurity"</h2>
-        <h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.studies = []</h2>
-        <h2>&nbsp;&nbsp;&nbsp;&nbsp;}</h2>
-        
-        <h2>&nbsp;&nbsp;&nbsp;&nbsp;rewindStudies() {</h2> 
-        <h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for (int year = 2025 ; year > 2019 ; year--) {</h2>
-        <h2>&nbsp;&nbsp;&nbsp;&nbsp;}</h2>
+        <div id="code-cv-container">
 
-        <br><h2>}</h2>
+            <div id="struct-cv">
+                <h2>struct cv {</h2>
+                <h2>&nbsp;&nbsp;&nbsp;&nbsp;char name[50];</h2>
+                <h2>&nbsp;&nbsp;&nbsp;&nbsp;char program[50];</h2>
+                <h2>&nbsp;&nbsp;&nbsp;&nbsp;char *studies[5];</h2>
+                <h2>&nbsp;&nbsp;&nbsp;&nbsp;char *hobbies[3];</h2>
+                <h2>};</h2>
+            </div>
+
+            <div id="fills">
+                <div id="fill-studies">
+                    <h2>void fillStudies(struct cv *struct_cv) {</h2> 
+                        <h2>&nbsp;&nbsp;&nbsp;&nbsp;int year = 2025;</h2>  
+                        <h2>&nbsp;&nbsp;&nbsp;&nbsp;while (year > 2018) {</h2>
+                        <h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (year == 2025) {</h2>
+                        <h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;struct_cv->studies[0] = "Licence Informatique";</h2>
+                        <h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;year -= 3;</h2>
+                        <h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (year == 2022) {</h2>
+                        <h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;struct_cv->studies[1] = "Licence 1 MIASHS";</h2>
+                        <h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;year -= 1;</h2>
+                        <h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (year == 2021) {</h2>
+                        <h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;struct_cv->studies[2] = "Cycle Préparatoire Info SUP";</h2>
+                        <h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;year -= 1;</h2>
+                        <h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (year == 2020) {</h2>
+                        <h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;struct_cv->studies[3] = "MPSI";</h2>
+                        <h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;year -= 1;</h2>
+                        <h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (year == 2019) {</h2>
+                        <h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;struct_cv->studies[4] = "Baccalauréat S";</h2>
+                        <h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;year -= 3;</h2>
+                        <h2>}</h2>
+                </div>
+                
+                <div id="fill-identity">
+                    <h2>void fillIdentity(struct cv *struct_cv) {</h2>  
+                    <h2>&nbsp;&nbsp;&nbsp;&nbsp;struct_cv->name = "Lucas Sauvage";</h2>  
+                    <h2>&nbsp;&nbsp;&nbsp;&nbsp;struct_cv->program = "M1 IOT & Cybersecurity";</h2> 
+                    <h2>&nbsp;&nbsp;&nbsp;&nbsp;for (int i = 0 ; i < 3 ; i++) {</h2>
+                    <h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;struct_cv->hobbies[0] = "Guitare";</h2>  
+                    <h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;struct_cv->hobbies[1] = "Composition Musicale";</h2>
+                    <h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;struct_cv->hobbies[2] = "Lecture";</h2>
+                    <h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;struct_cv->hobbies[3] = "Gaming";</h2> 
+                    <h2>&nbsp;&nbsp;&nbsp;&nbsp;}</h2>
+                    <h2>}</h2>      
+                </div>
+            </div>                
+        </div>
     </section>
 
     <div class="cv-container">
