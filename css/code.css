@@ -1,0 +1,48 @@
+/*replicate vs code with css*/ 
+
+#code-cv-container {
+    font-family: "Menlo, Monaco, 'Courier New', monospace";
+    background-color: #1e1e1e; 
+    font-size: 18px;
+    color: #C9CDCF;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.comment {
+    color:#6a9955; 
+}
+
+.key-word {
+    color: #569cd6; 
+}
+
+.type {
+    color:#E4004B; 
+}
+
+.string {
+    color: #ce9178;
+}
+
+.number {
+    color: #b5cea8;
+}
+
+.function {
+    color:#DCDCAA; 
+}
+
+.preproc {
+    color: #C586C0;
+}
+
+.constant {
+    color: #4FC1FF;
+    font-weight: bold;
+}
+
+.parameter,
+.reference {
+    color:#FF668F;
+}

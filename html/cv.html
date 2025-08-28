@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="../css/header.css">    
     <link rel="stylesheet" href="../css/body.css">
     <link rel="stylesheet" href="../css/cv.css">
+    <link rel="stylesheet" href="../css/code.css">
 
 
 </head>
@@ -16,58 +17,6 @@
 <body>
 
     <div id="header-placeholder"></div>
-
-    <section id="code-cv-section">
-
-        <div id="code-cv-container">
-
-            <div id="struct-cv">
-                <h2>struct cv {</h2>
-                <h2>&nbsp;&nbsp;&nbsp;&nbsp;char name[50];</h2>
-                <h2>&nbsp;&nbsp;&nbsp;&nbsp;char program[50];</h2>
-                <h2>&nbsp;&nbsp;&nbsp;&nbsp;char *studies[5];</h2>
-                <h2>&nbsp;&nbsp;&nbsp;&nbsp;char *hobbies[3];</h2>
-                <h2>};</h2>
-            </div>
-
-            <div id="fills">
-                <div id="fill-studies">
-                    <h2>void fillStudies(struct cv *struct_cv) {</h2> 
-                        <h2>&nbsp;&nbsp;&nbsp;&nbsp;int year = 2025;</h2>  
-                        <h2>&nbsp;&nbsp;&nbsp;&nbsp;while (year > 2018) {</h2>
-                        <h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (year == 2025) {</h2>
-                        <h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;struct_cv->studies[0] = "Licence Informatique";</h2>
-                        <h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;year -= 3;</h2>
-                        <h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (year == 2022) {</h2>
-                        <h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;struct_cv->studies[1] = "Licence 1 MIASHS";</h2>
-                        <h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;year -= 1;</h2>
-                        <h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (year == 2021) {</h2>
-                        <h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;struct_cv->studies[2] = "Cycle Préparatoire Info SUP";</h2>
-                        <h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;year -= 1;</h2>
-                        <h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (year == 2020) {</h2>
-                        <h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;struct_cv->studies[3] = "MPSI";</h2>
-                        <h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;year -= 1;</h2>
-                        <h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (year == 2019) {</h2>
-                        <h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;struct_cv->studies[4] = "Baccalauréat S";</h2>
-                        <h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;year -= 3;</h2>
-                        <h2>}</h2>
-                </div>
-                
-                <div id="fill-identity">
-                    <h2>void fillIdentity(struct cv *struct_cv) {</h2>  
-                    <h2>&nbsp;&nbsp;&nbsp;&nbsp;struct_cv->name = "Lucas Sauvage";</h2>  
-                    <h2>&nbsp;&nbsp;&nbsp;&nbsp;struct_cv->program = "M1 IOT & Cybersecurity";</h2> 
-                    <h2>&nbsp;&nbsp;&nbsp;&nbsp;for (int i = 0 ; i < 3 ; i++) {</h2>
-                    <h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;struct_cv->hobbies[0] = "Guitare";</h2>  
-                    <h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;struct_cv->hobbies[1] = "Composition Musicale";</h2>
-                    <h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;struct_cv->hobbies[2] = "Lecture";</h2>
-                    <h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;struct_cv->hobbies[3] = "Gaming";</h2> 
-                    <h2>&nbsp;&nbsp;&nbsp;&nbsp;}</h2>
-                    <h2>}</h2>      
-                </div>
-            </div>                
-        </div>
-    </section>
 
     <div class="cv-container">
 
@@ -173,6 +122,63 @@
             </div>
         </div> 
     </div>
+
+
+    <section id="code-cv-section">
+
+        <div id="code-cv-container">
+
+            <div id="cv-headers">
+                <span><span class="preproc">#include</span><span class="string"> &lt;stdio.h&gt;</span></span>
+            </div>
+
+            <div id="struct-cv">
+                <span><span class="type">struct</span><span> cv {</span></span><br>
+                <span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="type">char</span><span> name[50];</span></span><br>
+                <span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="type">char</span><span> program[50];</span></span><br>
+                <span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="type">char</span><span> *studies[5];</span></span><br>
+                <span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="type">char</span><span> *hobbies[50];</span></span><br>
+                <span>};</span><br>
+            </div>
+
+            <div id="fills">
+                <div id="fill-studies">
+                    <span><span class="type">void</span><span class="function"> fillStudies</span>(<span class="type">struct</span> cv <span class="parameter">*struct_cv</span>) {</span> <br>
+                        <span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="type">int</span> year = <span class="number"> 2025</span>;</span>  <br>
+                        <span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="key-word">while</span> (year > <span clas="number">2018</span>) {</span><br>
+                        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="key-word">int</span> (year == <span class="number">2025</span>) {</span><br>
+                        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="reference">struct_cv</span>-><span class="reference">studies[0]</span> = <span class="string">"Licence Informatique"</span>;</span><br>
+                        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;year -= 3;</span><br>
+                        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="key-word">if </span> (year == <span class="number">2022</span>) {</span><br>
+                        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="reference">struct_cv</span>-><span class="reference">studies[0]</span>  = <span class="string">"Licence 1 MIASHS"</span>;</span><br>
+                        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;year -= 1;</span><br>
+                        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="key-word">if </span> (year == 2021) {</span><br>
+                        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="reference">struct_cv</span>-><span class="reference">studies[0]</span>  = <span class="string">"Cycle Préparatoire Info SUP"</span>;</span><br>
+                        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;year -= 1;</span><br>
+                        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="key-word">if </span> (year == 2020) {</span><br>
+                        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="reference">struct_cv</span>-><span class="reference">studies[0]</span>  = <span class="string">"MPSI"</span>;</span><br>
+                        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;year -= 1;</span><br>
+                        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="key-word">if </span> (year == 2019) {</span><br>
+                        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="reference">struct_cv</span>-><span class="reference">studies[0]</span>  = <span class="string">"Baccalauréat S"</span>;</span><br>
+                        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;year -= 3;</span><br>
+                        <span>}</span><br>
+                </div>
+                
+                <div id="fill-identity">
+                    <span><span class="type">void</span><span class="function"> fillIdentity</span>(<span class="type">struct</span> cv <span class="parameter">*struct_cv</span>) {</span> <br></span>  <br>
+                    <span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="reference">struct_cv</span>-><span class="reference">name</span>  = <span class="string">"Lucas Sauvage"</span>;</span>  <br>
+                    <span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="reference">struct_cv</span>-><span class="reference">program</span>  = <span class="string">"M1 IOT & Cybersecurity"</span>;</span> <br>
+                    <span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="key-word">for </span> (<span class="type">int</span> i = 0 ; i < 3 ; i++) {</span><br>
+                    <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="reference">struct_cv</span>-><span class="reference">hobbies[0]</span>  = <span class="string">"Guitare"</span>;</span>  <br>
+                    <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="reference">struct_cv</span>-><span class="reference">hobbies[1]</span> = <span class="string">"Composition Musicale"</span>;</span><br>
+                    <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="reference">struct_cv</span>-><span class="reference">hobbies[2]</span> = <span class="string">"Lecture"</span>;</span><br>
+                    <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="reference">struct_cv</span>-><span class="reference">hobbies[3]</span> = <span class="string">"Gaming"</span>;</span> <br>
+                    <span>&nbsp;&nbsp;&nbsp;&nbsp;}</span><br>
+                    <span>}</span> <br>     
+                </div>
+            </div>                
+        </div>
+    </section>
 
 </body>
 
